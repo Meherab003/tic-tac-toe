@@ -2,10 +2,14 @@ const Square = ({ value, onSquareClick }) => {
   return (
     <>
       <button
-        className="w-16 h-16 border border-gray-500 m-1"
+        className="h-[100px] rounded-lg bg-[#3d1558]"
         onClick={onSquareClick}
       >
-        {value}
+        {value === "X" ? (
+          <div className="text-6xl font-bold text-[#72cff9]">X</div>
+        ) : value === "O" ? (
+          <div className="text-6xl font-bold text-[#dcbf3f]">O</div>
+        ) : null}
       </button>
     </>
   );
