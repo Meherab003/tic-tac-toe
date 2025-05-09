@@ -1,12 +1,21 @@
-# React + Vite
+# Tic Tac Toe ❌⭕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Check out the Live Link](URL "https://tic-tac-toe-kappa-one-98.vercel.app/")
 
-Currently, two official plugins are available:
+### ✨Initial Look:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src='/public/freshLook.png' />
 
-## Expanding the ESLint configuration
+### Game Finish Look:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img src='/public/finalLook.png' />
+
+### DOM Tree:
+
+- Root
+  - App(game)
+    - Board
+      - Squares
+    - History
+
+> Enjoy The Game!
