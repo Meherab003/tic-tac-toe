@@ -1,9 +1,6 @@
-import { useState } from "react";
 import Square from "./Square";
 
-const Board = () => {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
+const Board = ({ xIsNext, squares, onPlay }) => {
   let winner = calculateWinner(squares);
   let status;
 
@@ -13,21 +10,20 @@ const Board = () => {
     status = `Next Move is: ${xIsNext ? "X" : "O"}`;
   }
   const handleClick = (i) => {
-    const newSquares = squares.slice();
+    const nextSquares = squares.slice();
     if (squares[i] || winner) {
       return;
     }
     if (xIsNext) {
-      newSquares[i] = "X";
+      nextSquares[i] = "X";
     } else {
-      newSquares[i] = "O";
+      nextSquares[i] = "O";
     }
-    setSquares(newSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
   };
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="text-xl mb-5 bg-[#387e39] w-[65%] md:w-11/12 h-10 text-white relative">
+    <div className="flex-1 flex flex-col justify-center items-center">
+      <div className="text-xl mb-5 bg-[#387e39] w-[65%] md:w-[316px] h-10 text-white relative">
         <div className="bg-[#387e39] absolute -bottom-3 w-10 h-8 -left-6">
           <div className="bg-[#27033d] h-8 w-8 rotate-45 absolute -left-5"></div>
         </div>
